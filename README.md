@@ -1,6 +1,6 @@
 # Dmitry Dudukin
 
-## Senior Java & DevOps Engineer
+## Java Backend & DevOps Engineer
 
 3+ years of commercial Java backend development | 6.5 years enterprise IT at a Fortune 500 energy company
 5 production systems shipped | 148K+ lines of commercial Java | Full cycle: requirements → architecture → Kubernetes
