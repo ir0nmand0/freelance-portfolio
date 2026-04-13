@@ -28,7 +28,7 @@ Built a Telegram-based backend with dual AI integration:
 
 **Subscription Engine (74+ payment files):**
 - Regional payment gateway (comparable to Stripe) with 3 subscription tiers (Standard/Premium/VIP)
-- 54-FZ fiscal compliance (same as education platform, proven pattern)
+- Fiscal compliance (same as education platform, proven pattern)
 - Subscription lifecycle management: trial → active → renewal → expiry → grace period
 
 **Architecture:**

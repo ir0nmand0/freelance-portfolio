@@ -4,7 +4,7 @@
 
 I build backend systems that handle payments without failing, monitor 2,000+ servers before they crash, and deploy to Kubernetes with zero manual steps.
 
-5 production systems shipped. 3 of them are live right now — you can click and check:
+8 production systems shipped. 3 of them are live right now — you can click and check:
 [learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/) | [arcanespectrum.ru](https://arcanespectrum.ru/)
 
 **Available for:** Contract & freelance work (remote)
@@ -76,7 +76,7 @@ Production repositories are private (NDA). The pinned repos are educational proj
 **To evaluate my production work:**
 1. **[Case studies](cases/)** — 8 projects, each with Problem → Solution → Result and concrete metrics
 2. **[Live systems](demo/)** — click and see running production code
-3. **Architecture diagrams** — included in each case study below
+3. **Architecture diagrams** — included in select case studies
 
 ---
 

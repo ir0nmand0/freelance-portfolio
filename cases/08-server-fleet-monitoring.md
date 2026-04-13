@@ -9,7 +9,7 @@
 
 ## Problem
 
-2,000+ servers across a national gas station network had **zero monitoring**:
+2,000+ servers across a nationwide network of remote service locations had **zero monitoring**:
 
 1. **No visibility** — disk failures, memory issues, and hardware degradation discovered only after causing downtime
 2. **No dedicated monitoring infra** — deploying Zabbix/Nagios across 2,000+ sites was not feasible (budget, network constraints)

@@ -12,7 +12,7 @@
 
 Client needed a scalable online learning platform with courses, tests, and automated certification. Three critical requirements:
 
-1. **Multi-provider payments** — client wanted redundancy across 3 payment gateways with fiscal compliance (Russian 54-FZ law requires real-time receipt generation)
+1. **Multi-provider payments** — client wanted redundancy across 3 payment gateways with fiscal compliance (national law requires real-time receipt generation)
 2. **Cost reduction** — existing market solutions charged students $500–600 per course, limiting the addressable market
 3. **Zero-downtime payments** — any payment failure means lost revenue and lost trust
 
@@ -28,7 +28,7 @@ Built a Telegram-based learning platform from scratch on Spring Boot 4 / Java 25
 
 **Payment Engine (66 Java files):**
 - Triple integration: 2 regional payment gateways (comparable to Stripe/PayPal) + Telegram Payments — each with REST API, HMAC signature verification, and webhook processing
-- 54-FZ fiscal compliance: `Receipt` / `YookassaReceipt` / `ReceiptItem` models, tax scheme USN (simplified taxation), payment object type: "service"
+- Fiscal compliance: `Receipt` / `GatewayReceipt` / `ReceiptItem` models, tax scheme integration, payment object type: "service"
 - Resilience4j Circuit Breaker with separate read/write policies — payment writes have stricter thresholds than read operations
 - Retry with exponential backoff for transient failures
 

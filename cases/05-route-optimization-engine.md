@@ -9,7 +9,7 @@
 
 ## Problem
 
-Enterprise client needed to calculate optimal routes from service bases to 2,000+ locations (gas stations across a national network). The existing process:
+Enterprise client needed to calculate optimal routes from service bases to 2,000+ remote service locations. The existing process:
 
 1. **Fully manual** — dispatchers calculated routes by hand using paper maps and web tools
 2. **Inaccurate** — manual calculations didn't account for real-time road conditions, one-way streets, or seasonal restrictions

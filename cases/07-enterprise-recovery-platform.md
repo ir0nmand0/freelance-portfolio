@@ -9,10 +9,10 @@
 
 ## Problem
 
-Fortune 500 energy company needed to migrate thousands of workstations from Windows to Linux across 1,000+ remote sites (gas stations). Critical constraints:
+Fortune 500 energy company needed to migrate thousands of workstations from Windows to Linux across 1,000+ remote sites. Critical constraints:
 
 1. **No physical access** — sites are geographically dispersed across the country, sending engineers to each one was not feasible
-2. **Zero downtime tolerance** — gas stations operate 24/7, migration must not disrupt sales
+2. **Zero downtime tolerance** — sites operate 24/7, migration must not disrupt operations
 3. **Configuration diversity** — 11 different hardware/software/security profiles across site types
 4. **Rollback requirement** — if migration fails at any stage, the machine must boot back into Windows automatically
 5. **Post-migration recovery** — when hardware fails after migration, field engineers needed 4+ hours for manual recovery
