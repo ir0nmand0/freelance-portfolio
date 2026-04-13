@@ -26,7 +26,7 @@ Built a Telegram-based learning platform from scratch on Spring Boot 4 / Java 25
 - Redis for distributed locking (payment idempotency), session state, and TTL-based caching
 - MinIO (S3-compatible) for media storage with presigned URLs (certificates, course materials)
 
-**Payment Engine (56+ Java files):**
+**Payment Engine (66 Java files):**
 - Triple integration: Robokassa + YooKassa (regional payment gateways, comparable to Stripe/PayPal) + Telegram Payments — each with REST API, HMAC signature verification, and webhook processing
 - 54-FZ fiscal compliance: `Receipt` / `YookassaReceipt` / `ReceiptItem` models, tax scheme USN (simplified taxation), payment object type: "service"
 - Resilience4j Circuit Breaker with separate read/write policies — payment writes have stricter thresholds than read operations
@@ -44,7 +44,7 @@ Built a Telegram-based learning platform from scratch on Spring Boot 4 / Java 25
 |--------|-------|
 | Production instances | **2** (learn.arcanespectrum.ru, learn.domhair.ru) |
 | Sales impact | **10x increase** — course prices dropped from $500–600 to $80–130 |
-| Codebase | **58,604** Java LOC, **657** files |
+| Codebase | **58,604** Java LOC, **657** files, **104** test files (39K test LOC) |
 | Payment uptime | **Zero processing failures** since launch (Circuit Breaker + retry) |
 | Deployment | Zero-touch via ArgoCD GitOps |
 

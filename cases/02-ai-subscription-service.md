@@ -20,11 +20,11 @@ Client operated a B2C service with three pain points:
 
 Built a Telegram-based backend with dual AI integration:
 
-**AI Layer:**
-- Spring AI integration with two LLM providers (Claude + OpenAI) for redundancy
+**AI Layer (4 LLM configurations):**
+- Dual Anthropic (primary + secondary) + dual OpenAI (primary + secondary) — automatic failover between providers
+- SmartLlmClient with token estimation, usage tracking (in-memory + DB dual storage), and cost monitoring
 - Automated draft response generation — AI prepares answers, human reviews and sends
 - Spam classification — AI filters irrelevant messages before they reach the operator
-- Anthropic SDK for advanced prompt engineering
 
 **Subscription Engine (74+ payment files):**
 - Robokassa (regional payment gateway, comparable to Stripe) with 3 subscription tiers (Standard/Premium/VIP)
@@ -34,7 +34,7 @@ Built a Telegram-based backend with dual AI integration:
 **Architecture:**
 - State machine for complex multi-step user workflows
 - 16 dual-storage interfaces (hot + cold data separation)
-- 8+ scheduled background services with DB-backed task queue
+- 25 scheduled background services with DB-backed task queue
 - Rate limiter to prevent API abuse
 - Booking system with conflict detection
 - Admin panel for content and user management
@@ -51,8 +51,8 @@ Built a Telegram-based backend with dual AI integration:
 | Spam handling | **100% automated** — eliminated ~200 spam messages/day from manual review |
 | Booking | Fully automated — clients self-schedule without operator involvement |
 | Operator workload | Reduced by ~70% — AI handles drafts, spam, and scheduling |
-| Codebase | **57,375** Java LOC, **596** files |
-| Payment files | **74+** files handling subscription lifecycle |
+| Codebase | **57,375** Java LOC, **596** files, **28** entities |
+| Scheduled services | **25** background jobs (task queue, notifications, cleanup, sync) |
 | Architecture docs | **8** Mermaid diagrams |
 
 ## Tech Stack

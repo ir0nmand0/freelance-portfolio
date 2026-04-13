@@ -40,7 +40,7 @@ Built a Telegram bot + gRPC backend combination:
 |--------|-------|
 | IT support tickets for setup | **~0** (was 100% manual — every user needed IT help) |
 | User self-service rate | **100%** — no technical knowledge required |
-| Codebase | **7,533** Java LOC + **1,525** lines Protobuf |
+| Codebase | **7,533** Java LOC + **2,224** lines Protobuf (65 .proto files) |
 | Setup time per user | **Under 1 minute** (was 15–30 min with IT support) |
 
 ## Tech Stack

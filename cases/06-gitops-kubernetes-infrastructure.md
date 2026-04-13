@@ -50,7 +50,7 @@ Built a complete GitOps infrastructure from scratch:
 - Tested recovery procedure documented
 
 **Automation:**
-- 4 Ansible playbooks: VPS setup, K3s updates, SSH hardening, security patches
+- 8 Ansible playbooks: VPS setup, K3s updates, SSH hardening, security patches, and more
 - Renovate Bot for automated Helm chart updates (weekly, grouped)
 - Kured for automatic node reboots (maintenance window 01:00–03:00, graceful pod eviction)
 
@@ -59,12 +59,14 @@ Built a complete GitOps infrastructure from scratch:
 | Metric | Value |
 |--------|-------|
 | Deployment model | **Zero-touch** — git push triggers full pipeline |
+| ArgoCD | **18** Applications, **23** Kustomize overlays, **24** Helm value files |
 | Monitoring | **8+ dashboards** covering all infrastructure layers |
 | Alert response | Critical: **10 seconds**, Warning: **5 minutes** |
 | Backup | Automated daily + weekly, **AES-256-GCM** encrypted |
 | Certificate management | Fully automated (Let's Encrypt + Cloudflare DNS-01) |
 | Vulnerability scanning | Every image scanned on push (Harbor + Trivy) |
 | Dependency updates | Automated weekly via Renovate Bot |
+| Infrastructure as Code | **155** YAML files, **8** Ansible playbooks |
 
 ## Tech Stack
 
