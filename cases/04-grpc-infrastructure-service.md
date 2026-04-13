@@ -1,7 +1,7 @@
 # gRPC Infrastructure Management Service
 
 **Client:** NDA client (freelance)
-**Role:** Sole developer
+**Role:** Developer, full cycle
 **Duration:** 3 months
 **Status:** Production
 

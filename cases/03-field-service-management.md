@@ -1,7 +1,7 @@
 # Enterprise Field Service Management System
 
 **Client:** NDA client (Fortune 500 energy company subsidiary)
-**Role:** Sole developer
+**Role:** Developer, collaborating with field engineering teams and management
 **Duration:** 2+ years (started 2022, active development)
 **Status:** Production
 

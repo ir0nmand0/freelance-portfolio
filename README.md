@@ -2,95 +2,81 @@
 
 ## Java Backend & DevOps Engineer
 
-3+ years of commercial Java backend development | 6.5 years enterprise IT at a Fortune 500 energy company
-5 production systems shipped | 148K+ lines of commercial Java | Full cycle: requirements → architecture → Kubernetes
+I build backend systems that handle payments without failing, monitor 2,000+ servers before they crash, and deploy to Kubernetes with zero manual steps.
+
+5 production systems shipped. 3 of them are live right now — you can click and check:
+[learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/) | [arcanespectrum.ru](https://arcanespectrum.ru/)
 
 **Available for:** Contract & freelance work (remote)
-**Timezone:** UTC+3 (flexible overlap with US/EU hours)
+**Timezone:** UTC+3 | Flexible overlap with US/EU hours | Response within 4 hours during business days
+
+---
+
+## What I Deliver
+
+| Business outcome | How |
+|-----------------|-----|
+| **10x sales increase** | Built an education platform that dropped course prices from $500 to $80 — triple payment integration, zero payment failures since launch |
+| **4h → 45 min recovery** | Automated recovery + remote OS migration across 1,000+ sites without physical access. 95% of fleet migrated |
+| **2,000+ servers monitored** | Built a predictive analytics platform from scratch — 6 failure prediction types, 32 alert categories, 2M metrics/day |
+| **Zero-touch deployments** | GitOps infrastructure: 18 ArgoCD apps, 3 K8s clusters, automated backups, vulnerability scanning, Telegram alerts |
 
 ---
 
 ## Tech Stack
 
-| Category | Technologies |
-|----------|-------------|
-| **Java & Spring** | Java 21/25, Spring Boot 3.x/4.x, Virtual Threads, Spring Data JPA/Hibernate, Spring Security, Spring AI (Claude, OpenAI), WebFlux, Spring Cloud, MapStruct |
-| **Data & Messaging** | PostgreSQL, Redis, Apache Kafka, Flyway, gRPC/Protobuf, Apache Avro, Caffeine |
-| **Integrations** | Payment gateways (3 providers, fiscal compliance), Telegram Bot API, AWS S3/MinIO, Resilience4j (Circuit Breaker, Retry, Rate Limiter) |
-| **DevOps** | Kubernetes (K3s), ArgoCD (GitOps), Helm, Kustomize, Harbor + Trivy, GitHub Actions, Docker, Ansible |
-| **Monitoring** | Prometheus, Grafana (8+ dashboards), Loki, Alertmanager, Spring Boot Actuator, Micrometer |
-| **Quality** | Maven (multi-module), TestContainers, JUnit 5, JaCoCo, SpotBugs, Checkstyle |
+**Core:** Java 21/25, Spring Boot 3.x/4.x, Virtual Threads, PostgreSQL, Redis, Kafka, Flyway
 
----
+**Integration:** gRPC/Protobuf, Spring AI (Claude + OpenAI), Payment gateways, Telegram Bot API, AWS S3/MinIO, Resilience4j
 
-## Key Numbers
+**DevOps:** Kubernetes, ArgoCD, Helm, Kustomize, Harbor + Trivy, GitHub Actions, Docker, Ansible
 
-| Metric | Value |
-|--------|-------|
-| Commercial Java LOC | **148,000+** across 5 production systems |
-| Total Java LOC | **330,000+** across 44 repositories |
-| Sales impact | **10x** increase via platform cost optimization |
-| MTTR improvement | **4h → 45 min** (enterprise recovery, 1,000+ sites) |
-| Infrastructure | **2,000+** hosts monitored with predictive analytics |
-| Payment integrations | **3** providers with fiscal compliance (54-FZ) |
-| Architecture | **16-module** Maven modular monolith |
-| Live platforms | **2** production systems serving paying customers |
+**Monitoring:** Prometheus, Grafana, Loki, Alertmanager, Micrometer
+
+**Quality:** Maven multi-module, TestContainers, JUnit 5, ArchUnit, CheckStyle, PMD, Error Prone
 
 ---
 
 ## Experience
 
-### Freelance Java Backend Developer — 2024–Present
+### Freelance — Java Backend & DevOps — 2024–Present
 
-End-to-end backend systems, from requirements gathering to Kubernetes deployment:
+End-to-end delivery: requirements gathering → architecture → development → Kubernetes deployment. Working directly with clients, iterating based on feedback.
 
-- Online education platforms with triple payment integration and fiscal compliance
-  **Live:** [learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/)
-- AI-powered B2C services using Spring AI (Claude + OpenAI dual LLM)
-  **Live:** [arcanespectrum.ru](https://arcanespectrum.ru/)
-- gRPC infrastructure management services with Protobuf v4
-- GitOps CI/CD pipelines: GitHub Actions → Harbor → ArgoCD → K8s
+- **[Online education platform](cases/01-online-education-platform.md)** — Triple payment integration (2 payment gateways + Telegram Payments), fiscal compliance, PDF certificates. 2 live instances, 10x client sales growth
+- **[AI-powered subscription service](cases/02-ai-subscription-service.md)** — Dual LLM (Claude + OpenAI) with automatic failover, spam filtering, appointment booking. 25 background services, state machine workflows
+- **[gRPC infrastructure service](cases/04-grpc-infrastructure-service.md)** — Protobuf v4, QR-code delivery, self-service setup. IT support tickets dropped to near zero
+- **[GitOps infrastructure](cases/06-gitops-kubernetes-infrastructure.md)** — 3 K8s clusters, ArgoCD, Harbor, Prometheus/Grafana/Loki, encrypted backups
 
-**→ See [cases/](cases/) for detailed Problem → Solution → Result breakdowns**
+### Fortune 500 Energy Company — Nov 2019–Present (6.5 years)
 
-### Senior Specialist — Fortune 500 Energy Company — Nov 2019–Present (6.5 years)
+Promoted Specialist → Senior Specialist. Java backend development since 2022, collaborating with cross-functional teams (DevOps, field engineers, management):
 
-Promoted Specialist → Senior Specialist. Java backend development since 2022:
+- **[Server fleet monitoring](cases/08-server-fleet-monitoring.md)** — 16-module Maven monolith, SNMP v3, predictive disk failure analytics for 2,000+ hosts. Deployed to corporate network by company DevOps team
+- **[Field service management](cases/03-field-service-management.md)** — 7-role security model, automated PDF/Excel reporting, mandatory safety checks for field engineers
+- **[Route optimization](cases/05-route-optimization-engine.md)** — Batch calculation for 2,000+ locations, 3 days of manual work → 5 minutes
+- **[OS migration & recovery](cases/07-enterprise-recovery-platform.md)** — Remote 3-stage pipeline, 95% of workstations migrated, MTTR 4h → 45 min
 
-- **Server fleet monitoring platform** — 16-module Maven modular monolith, Spring Boot 4, Java 25, SNMP v3 (authPriv SHA+AES), Spring Security (Kerberos/SPNEGO + LDAP), React 19 frontend. Covered 2,000+ previously unmonitored hosts with predictive disk failure analytics
-- **Field service management system** — Spring Boot 3, 7-role Spring Security model, automated PDF/Excel reporting (iText, JasperReports, Apache POI), mandatory pre-trip safety checks
-- **Route optimization engine** — WebFlux, GraphHopper, Yandex Maps API. Automated route calculation for 2,000+ locations (previously manual)
-- **Enterprise OS migration** — 3-stage remote pipeline (PowerShell/SCCM → SystemRescue → Astra Linux), rollback at each stage. Deployed to 95% of workstations
-- **Recovery platform** — Multi-boot rescue system for 1,000+ sites, Docker-based build, BitTorrent distribution. MTTR: 4h → 45 min
-
-### IT Support Specialist — Energy Infrastructure Company — Dec 2017–Nov 2019
-
-Infrastructure support for 1,200+ endpoints. 1C administration. Automation with Python and PowerShell.
-
-### Network Support Engineer — ISP — Jul–Nov 2017
-
-Network equipment configuration and support.
+### Earlier: IT infrastructure (2017–2019) — 1,200+ endpoints, automation with Python/PowerShell
 
 ---
 
-## Education & Certifications
+## Education
 
-| Program | Details |
-|---------|---------|
-| **Yandex Practicum: Java Developer Extended** | 855 hours — Java Core, Spring Boot, Spring ORM, Big Data (Stream Processing), Cloud Native, Diploma |
-| **Yandex Practicum: Algorithms & Data Structures** | 188 hours — Two Pointers, Sorting, Trees, Graphs, DP, String Algorithms |
-| **SUAI St. Petersburg** | Software Engineering (09.03.04), 3rd year |
+- **Yandex Practicum: Java Developer Extended** — 855 hours (Java Core → Spring Boot → Big Data → Cloud Native → Diploma)
+- **Yandex Practicum: Algorithms & Data Structures** — 188 hours
+- **SUAI St. Petersburg** — Software Engineering
 
 ---
 
 ## About This GitHub Profile
 
-All 5 commercial production systems (148K+ Java LOC) are in **private repositories** under NDA. The public repos pinned on this profile are educational projects that demonstrate the same technology stack I use in production: Spring Boot, microservices, Kafka, gRPC, Spring Security.
+Production repositories are private (NDA). The pinned repos are educational projects showing the same stack I use commercially: Spring Boot, Kafka, gRPC, Spring Cloud, Spring Security.
 
-**To see real production work:**
-- **[cases/](cases/)** — 8 detailed case studies with architecture decisions, metrics, and results
-- **[demo/](demo/)** — live URLs of running production systems + links to public code
-- **Live systems you can visit right now:** [learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/) | [arcanespectrum.ru](https://arcanespectrum.ru/)
+**To evaluate my production work:**
+1. **[Case studies](cases/)** — 8 projects, each with Problem → Solution → Result and concrete metrics
+2. **[Live systems](demo/)** — click and see running production code
+3. **Architecture diagrams** — included in each case study below
 
 ---
 

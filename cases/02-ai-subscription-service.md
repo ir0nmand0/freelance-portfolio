@@ -1,7 +1,7 @@
 # AI-Powered B2C Subscription Platform
 
 **Client:** NDA client (freelance)
-**Role:** Sole backend developer
+**Role:** Backend developer, full cycle
 **Duration:** 10 months
 **Status:** Production
 **Live:** [arcanespectrum.ru](https://arcanespectrum.ru/)
@@ -27,7 +27,7 @@ Built a Telegram-based backend with dual AI integration:
 - Spam classification — AI filters irrelevant messages before they reach the operator
 
 **Subscription Engine (74+ payment files):**
-- Robokassa (regional payment gateway, comparable to Stripe) with 3 subscription tiers (Standard/Premium/VIP)
+- Regional payment gateway (comparable to Stripe) with 3 subscription tiers (Standard/Premium/VIP)
 - 54-FZ fiscal compliance (same as education platform, proven pattern)
 - Subscription lifecycle management: trial → active → renewal → expiry → grace period
 
@@ -55,6 +55,27 @@ Built a Telegram-based backend with dual AI integration:
 | Scheduled services | **25** background jobs (task queue, notifications, cleanup, sync) |
 | Architecture docs | **8** Mermaid diagrams |
 
+## Architecture
+
+```mermaid
+graph TB
+    Client([Client]) --> TG[Telegram Bot API]
+    TG --> SM[State Machine<br/>16 dual-storage interfaces]
+    SM --> SB[Spring Boot 3.4 / Java 21<br/>Virtual Threads]
+    
+    SB --> LLM{SmartLlmClient<br/>Token estimation<br/>Usage tracking}
+    LLM --> A1[Anthropic Primary]
+    LLM --> A2[Anthropic Secondary]
+    LLM --> O1[OpenAI Primary]
+    LLM --> O2[OpenAI Secondary]
+    
+    SB --> PAY[Payment Gateway<br/>Standard / Premium / VIP]
+    SB --> PG[(PostgreSQL)]
+    SB --> CACHE[Caffeine Cache]
+    SB --> SCHED[25 Scheduled Services<br/>DB-backed task queue]
+    SB --> MAIL[Gmail IMAP<br/>Fallback notifications]
+```
+
 ## Tech Stack
 
-`Spring Boot 3.4` `Java 21` `Virtual Threads` `Spring AI` `Claude API` `OpenAI API` `Anthropic SDK` `Robokassa` `PostgreSQL` `Flyway` `Caffeine` `OpenFeign` `Resilience4j` `Telegram Bot API` `Gmail IMAP` `Docker`
+`Spring Boot 3.4` `Java 21` `Virtual Threads` `Spring AI` `Claude API` `OpenAI API` `Anthropic SDK` `Payment Gateway Integration` `PostgreSQL` `Flyway` `Caffeine` `OpenFeign` `Resilience4j` `Telegram Bot API` `Gmail IMAP` `Docker`

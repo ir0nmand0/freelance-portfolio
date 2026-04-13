@@ -1,7 +1,7 @@
 # Route Optimization Engine
 
 **Client:** NDA client (Fortune 500 energy company subsidiary)
-**Role:** Sole developer
+**Role:** Developer
 **Duration:** 1 month
 **Status:** Production
 

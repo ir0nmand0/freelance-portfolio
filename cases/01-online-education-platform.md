@@ -1,7 +1,7 @@
 # Online Education & Certification Platform
 
 **Client:** NDA client (freelance)
-**Role:** Sole backend developer (requirements → architecture → deployment)
+**Role:** Backend developer, full cycle (requirements gathering with client → architecture → development → deployment)
 **Duration:** 6 months
 **Status:** Production (2 live instances serving paying customers)
 **Live:** [learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/)
@@ -27,7 +27,7 @@ Built a Telegram-based learning platform from scratch on Spring Boot 4 / Java 25
 - MinIO (S3-compatible) for media storage with presigned URLs (certificates, course materials)
 
 **Payment Engine (66 Java files):**
-- Triple integration: Robokassa + YooKassa (regional payment gateways, comparable to Stripe/PayPal) + Telegram Payments — each with REST API, HMAC signature verification, and webhook processing
+- Triple integration: 2 regional payment gateways (comparable to Stripe/PayPal) + Telegram Payments — each with REST API, HMAC signature verification, and webhook processing
 - 54-FZ fiscal compliance: `Receipt` / `YookassaReceipt` / `ReceiptItem` models, tax scheme USN (simplified taxation), payment object type: "service"
 - Resilience4j Circuit Breaker with separate read/write policies — payment writes have stricter thresholds than read operations
 - Retry with exponential backoff for transient failures
@@ -48,6 +48,28 @@ Built a Telegram-based learning platform from scratch on Spring Boot 4 / Java 25
 | Payment uptime | **Zero processing failures** since launch (Circuit Breaker + retry) |
 | Deployment | Zero-touch via ArgoCD GitOps |
 
+## Architecture
+
+```mermaid
+graph TB
+    User([Student / Admin]) --> TG[Telegram Bot API]
+    TG --> SB[Spring Boot 4 / Java 25<br/>Virtual Threads]
+    SB --> PG[(PostgreSQL<br/>Flyway migrations)]
+    SB --> RD[(Redis<br/>Distributed locks<br/>Session state)]
+    SB --> S3[(MinIO S3<br/>Certificates<br/>Course media)]
+    SB --> R4J{Resilience4j<br/>Circuit Breaker}
+    R4J --> P1[Payment Provider 1<br/>REST API + HMAC]
+    R4J --> P2[Payment Provider 2<br/>API + Webhooks]
+    R4J --> P3[Telegram Payments]
+    SB --> PW[Playwright<br/>PDF Certificates]
+    
+    subgraph CI/CD
+        GHA[GitHub Actions] --> HRB[Harbor Registry]
+        HRB --> ARGO[ArgoCD]
+        ARGO --> K8S[Kubernetes]
+    end
+```
+
 ## Tech Stack
 
-`Spring Boot 4` `Java 25` `Virtual Threads` `PostgreSQL` `Redis` `MinIO (S3)` `Robokassa` `YooKassa` `Telegram Payments` `Flyway` `Resilience4j` `TestContainers` `Playwright` `Docker` `GitHub Actions` `ArgoCD` `Kustomize`
+`Spring Boot 4` `Java 25` `Virtual Threads` `PostgreSQL` `Redis` `MinIO (S3)` `Payment Gateway Integration (3 providers)` `Telegram Payments` `Flyway` `Resilience4j` `TestContainers` `Playwright` `Docker` `GitHub Actions` `ArgoCD` `Kustomize`

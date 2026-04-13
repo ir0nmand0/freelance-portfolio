@@ -87,6 +87,43 @@ Built a predictive monitoring platform that leverages the existing Enterprise Se
 | Infrastructure cost | **$0 additional** — uses existing Enterprise Service Bus |
 | Frontend | **8** dashboard pages, auto-generated API client |
 
+## Architecture
+
+```mermaid
+graph TB
+    HOSTS([2,000+ Servers]) -->|SNMP v3<br/>SHA + AES| COLL[SNMP Collectors<br/>200 parallel workers]
+    
+    COLL --> SB[Spring Boot 4 / Java 25<br/>Virtual Threads<br/>16 Maven modules]
+    
+    SB --> PG[(PostgreSQL<br/>2M+ rows/day<br/>JDBC batch inserts)]
+    SB --> RD[(Redis<br/>Cache + Sessions)]
+    
+    subgraph Predictive Analytics
+        SB --> PRED{Linear Regression<br/>6 prediction types}
+        PRED --> P1[SSD Wear]
+        PRED --> P2[HDD Realloc]
+        PRED --> P3[Disk Full]
+        PRED --> P4[Overheat]
+        PRED --> P5[SSL Expiry]
+        PRED --> P6[RAM/OOM]
+    end
+    
+    subgraph Alerting
+        SB --> ALR[32 Alert Types<br/>State Machine<br/>open → updated → resolved]
+    end
+    
+    subgraph Security
+        SB --> KRB[Kerberos/SPNEGO<br/>+ LDAP SSO]
+        SB --> VAULT[HashiCorp Vault<br/>Dynamic DB credentials]
+    end
+    
+    SB --> UI[React 19 Frontend<br/>8 dashboard pages]
+    SB --> ESB[Enterprise Service Bus<br/>$0 additional infra]
+    SB --> EXP[Parquet Export<br/>ZSTD compression<br/>→ ML pipelines]
+    
+    UI --> |OpenAPI auto-gen| SB
+```
+
 ## Tech Stack
 
 `Spring Boot 4` `Java 25` `Virtual Threads` `PostgreSQL` `Redis` `SNMP4J (SNMPv3)` `Spring Security (Kerberos/SPNEGO + LDAP)` `HashiCorp Vault` `MapStruct` `Springdoc-OpenAPI` `Flyway` `TestContainers` `ArchUnit` `CheckStyle` `PMD` `Error Prone` `React 19` `TypeScript` `TanStack React Query` `Zod` `Vite` `Maven (16 modules)` `Docker`

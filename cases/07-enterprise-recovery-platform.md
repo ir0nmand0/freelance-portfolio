@@ -1,7 +1,7 @@
 # Enterprise OS Migration & Recovery Platform
 
 **Client:** NDA client (Fortune 500 energy company subsidiary)
-**Role:** Sole developer
+**Role:** Developer. Trained field engineering teams on the platform after deployment
 **Duration:** 2+ years
 **Status:** Production (deployed to 1,000+ sites)
 

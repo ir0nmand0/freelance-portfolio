@@ -1,7 +1,7 @@
 # GitOps Kubernetes Infrastructure
 
 **Client:** Own infrastructure for client projects
-**Role:** Sole DevOps engineer
+**Role:** DevOps engineer
 **Duration:** Ongoing (6+ months)
 **Status:** Production
 
@@ -67,6 +67,59 @@ Built a complete GitOps infrastructure from scratch:
 | Vulnerability scanning | Every image scanned on push (Harbor + Trivy) |
 | Dependency updates | Automated weekly via Renovate Bot |
 | Infrastructure as Code | **155** YAML files, **8** Ansible playbooks |
+
+## Architecture
+
+```mermaid
+graph TB
+    DEV([Developer]) --> GH[GitHub]
+    
+    subgraph CI/CD Pipeline
+        GH --> GHA[GitHub Actions<br/>Maven verify → Docker build]
+        GHA --> HRB[Harbor Registry<br/>+ Trivy scanning]
+        HRB --> ARGO[ArgoCD<br/>18 Applications<br/>Sync Waves]
+    end
+    
+    subgraph GMK-K8 [Management Cluster — GMK-K8]
+        ARGO
+        HRB
+        PROM[Prometheus]
+        GRAF[Grafana<br/>8+ dashboards]
+        LOKI[Loki<br/>30-day retention]
+        ALERT[Alertmanager<br/>→ Telegram]
+        MINIO_M[(MinIO<br/>Backups + Logs)]
+    end
+    
+    subgraph k8s-assessment [Production Cluster]
+        APP[Application Workloads]
+        PG_P[(PostgreSQL)]
+        RD_P[(Redis)]
+        ALLOY[Grafana Alloy<br/>remote-write]
+    end
+    
+    subgraph arcane [VPS — Edge]
+        EDGE[Public-facing Services]
+        TRAEFIK[Traefik<br/>+ cert-manager]
+    end
+    
+    ARGO --> APP
+    ARGO --> EDGE
+    ALLOY --> PROM
+    PROM --> GRAF
+    PROM --> ALERT
+    
+    subgraph Security
+        SEAL[Sealed Secrets]
+        CERT[cert-manager<br/>Let's Encrypt<br/>Cloudflare DNS-01]
+    end
+    
+    subgraph Backup
+        VEL[Velero<br/>Daily + Weekly]
+        KOP[Kopia<br/>AES-256-GCM]
+        VEL --> MINIO_M
+        KOP --> MINIO_M
+    end
+```
 
 ## Tech Stack
 
