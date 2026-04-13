@@ -25,7 +25,7 @@ Built a 3-stage **fully remote** OS migration pipeline + automated recovery plat
 - **Stage 1 — PowerShell/SCCM**: Pushed remotely to all Windows machines via corporate SCCM. Prepares dual-boot: patches BCD (Boot Configuration Data), installs GRUB 2.06/GRUB4DOS bootloader alongside Windows, SHA256-verifies all payloads. Machine reboots into Stage 2 automatically
 - **Stage 2 — SystemRescue (Linux live environment)**: Runs disk diagnostics (smartctl), resizes NTFS partition (ntfsresize) to make room, converts partition table if needed (GPT/MBR). Installs Linux to freed space. If any step fails → automatic rollback to Windows boot
 - **Stage 3 — Linux post-install**: Site-specific configuration applied based on hardware profile. Domain/non-domain variants via custom initramfs patches (bind mount technique)
-- **11 specialized images** for different site types and security/compliance requirements (domain, non-domain, BitLocker, KSC integration, etc.)
+- **11 specialized images** for different site types and security/compliance requirements (domain, non-domain, BitLocker, endpoint security integration, etc.)
 
 **Recovery Platform (for post-migration failures):**
 - Docker-based multi-boot rescue image builder (3 types: full ISO, lite ISO, bootable IMG)

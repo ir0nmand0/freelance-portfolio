@@ -1,7 +1,7 @@
 # Server Fleet Monitoring & Predictive Analytics Platform
 
 **Client:** NDA client (Fortune 500 energy company subsidiary)
-**Role:** Sole developer (backend + frontend via AI pair programming). Deployment to corporate network handled by company DevOps team
+**Role:** Developer (backend + frontend). Deployment to corporate network handled by company DevOps team
 **Duration:** 4+ months (active development)
 **Status:** Production
 

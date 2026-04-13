@@ -20,9 +20,9 @@ Enterprise client needed to calculate optimal routes from service bases to 2,000
 Built a batch route calculation engine:
 
 **Core Logic:**
-- Spring Boot 3.5, Java 21, WebFlux for non-blocking I/O
-- GraphHopper v10 for offline routing (road graph stored locally — no per-request API costs)
-- Regional Maps API for real-time traffic adjustments and geocoding (same integration pattern as Google Maps Directions API)
+- Spring Boot 3.4, Java 21, WebFlux for non-blocking I/O
+- GraphHopper for offline routing (road graph stored locally — no per-request API costs)
+- Maps API for real-time traffic adjustments and geocoding
 - Reactive streams for parallel route calculation
 
 **Business Integration:**
@@ -43,4 +43,4 @@ Built a batch route calculation engine:
 
 ## Tech Stack
 
-`Spring Boot 3.5` `Java 21` `WebFlux` `GraphHopper v10` `Maps Geocoding API` `Apache POI` `Docker`
+`Spring Boot 3.4` `Java 21` `WebFlux` `GraphHopper` `Maps Geocoding API` `Apache POI` `Docker`

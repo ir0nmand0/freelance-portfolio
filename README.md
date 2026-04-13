@@ -4,8 +4,7 @@
 
 I build backend systems that handle payments without failing, monitor 2,000+ servers before they crash, and deploy to Kubernetes with zero manual steps.
 
-8 production systems shipped. 3 of them are live right now — you can click and check:
-[learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/) | [arcanespectrum.ru](https://arcanespectrum.ru/)
+8 production systems shipped — [see case studies](cases/) and [live deployments](demo/).
 
 **Available for:** Contract & freelance work (remote)
 **Timezone:** UTC+3 | Flexible overlap with US/EU hours | Response within 4 hours during business days
@@ -25,9 +24,9 @@ I build backend systems that handle payments without failing, monitor 2,000+ ser
 
 ## Tech Stack
 
-**Core:** Java 21/25, Spring Boot 3.x/4.x, Virtual Threads, PostgreSQL, Redis, Kafka, Flyway
+**Core:** Java 21/25, Spring Boot 3.x/4.x, Virtual Threads, PostgreSQL, Redis, Flyway
 
-**Integration:** gRPC/Protobuf, Spring AI (Claude + OpenAI), Payment gateways, Telegram Bot API, AWS S3/MinIO, Resilience4j
+**Integration:** gRPC/Protobuf, Kafka, Spring AI (Claude + OpenAI), Payment gateways, Telegram Bot API, AWS S3/MinIO, Resilience4j
 
 **DevOps:** Kubernetes, ArgoCD, Helm, Kustomize, Harbor + Trivy, GitHub Actions, Docker, Ansible
 
