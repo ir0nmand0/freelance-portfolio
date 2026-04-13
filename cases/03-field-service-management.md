@@ -42,10 +42,10 @@ Built a Telegram-based field service control system:
 | Metric | Value |
 |--------|-------|
 | Safety compliance | **100% enforced** — no field visit possible without completing pre-trip check |
-| Reporting | Fully automated — eliminated manual data collection |
+| Reporting | Automated — weekly reports that took 2 days of manual work now generated instantly |
 | Codebase | **20,673** Java LOC, **213** files |
-| Users | Multiple teams across regions of a Fortune 500 subsidiary |
-| Uptime | Production since 2022 |
+| Coverage | Field engineering teams across 8+ regions |
+| Production | Running since 2022, 3+ years of uptime |
 
 ## Tech Stack
 

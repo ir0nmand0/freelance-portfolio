@@ -27,7 +27,7 @@ Built a Telegram-based learning platform from scratch on Spring Boot 4 / Java 25
 - MinIO (S3-compatible) for media storage with presigned URLs (certificates, course materials)
 
 **Payment Engine (56+ Java files):**
-- Triple integration: Robokassa (REST API + HMAC signatures) + YooKassa (API + webhooks) + Telegram Payments (Invoice → PreCheckout → SuccessfulPayment flow)
+- Triple integration: Robokassa + YooKassa (regional payment gateways, comparable to Stripe/PayPal) + Telegram Payments — each with REST API, HMAC signature verification, and webhook processing
 - 54-FZ fiscal compliance: `Receipt` / `YookassaReceipt` / `ReceiptItem` models, tax scheme USN (simplified taxation), payment object type: "service"
 - Resilience4j Circuit Breaker with separate read/write policies — payment writes have stricter thresholds than read operations
 - Retry with exponential backoff for transient failures

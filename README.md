@@ -33,7 +33,7 @@
 | MTTR improvement | **4h → 45 min** (enterprise recovery, 1,000+ sites) |
 | Infrastructure | **2,000+** hosts monitored with predictive analytics |
 | Payment integrations | **3** providers with fiscal compliance (54-FZ) |
-| Architecture | **17-module** Maven modular monolith |
+| Architecture | **16-module** Maven modular monolith |
 | Live platforms | **2** production systems serving paying customers |
 
 ---
@@ -57,7 +57,7 @@ End-to-end backend systems, from requirements gathering to Kubernetes deployment
 
 Promoted Specialist → Senior Specialist. Java backend development since 2022:
 
-- **Server fleet monitoring platform** — 17-module Maven modular monolith, Spring Boot 4, Java 25, SNMP v3 (authPriv SHA+AES), Spring Security (Kerberos/SPNEGO + LDAP), React 19 frontend. Covered 2,000+ previously unmonitored hosts with predictive disk failure analytics
+- **Server fleet monitoring platform** — 16-module Maven modular monolith, Spring Boot 4, Java 25, SNMP v3 (authPriv SHA+AES), Spring Security (Kerberos/SPNEGO + LDAP), React 19 frontend. Covered 2,000+ previously unmonitored hosts with predictive disk failure analytics
 - **Field service management system** — Spring Boot 3, 7-role Spring Security model, automated PDF/Excel reporting (iText, JasperReports, Apache POI), mandatory pre-trip safety checks
 - **Route optimization engine** — WebFlux, GraphHopper, Yandex Maps API. Automated route calculation for 2,000+ locations (previously manual)
 - **Enterprise OS migration** — 3-stage remote pipeline (PowerShell/SCCM → SystemRescue → Astra Linux), rollback at each stage. Deployed to 95% of workstations

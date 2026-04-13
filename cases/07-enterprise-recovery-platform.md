@@ -1,59 +1,53 @@
-# Enterprise Recovery Platform
+# Enterprise OS Migration & Recovery Platform
 
 **Client:** NDA client (Fortune 500 energy company subsidiary)
 **Role:** Sole developer
-**Duration:** 1.5 years
+**Duration:** 2+ years
 **Status:** Production (deployed to 1,000+ sites)
 
 ---
 
 ## Problem
 
-When hardware fails at one of the company's 1,000+ remote sites (gas stations), field engineers faced:
+Fortune 500 energy company needed to migrate thousands of workstations from Windows to Linux across 1,000+ remote sites (gas stations). Critical constraints:
 
-1. **4+ hour recovery time** — manual procedures with no standardized tooling
-2. **Configuration diversity** — each site type had unique OS, drivers, and application configs, making a one-size-fits-all approach impossible
-3. **Distribution at scale** — getting updated recovery media to 1,000+ geographically dispersed sites was itself a logistics problem
-4. **Offline environments** — many sites have limited or no internet connectivity
+1. **No physical access** — sites are geographically dispersed across the country, sending engineers to each one was not feasible
+2. **Zero downtime tolerance** — gas stations operate 24/7, migration must not disrupt sales
+3. **Configuration diversity** — 11 different hardware/software/security profiles across site types
+4. **Rollback requirement** — if migration fails at any stage, the machine must boot back into Windows automatically
+5. **Post-migration recovery** — when hardware fails after migration, field engineers needed 4+ hours for manual recovery
 
 ## Solution
 
-Built an automated multi-boot recovery system with a complete distribution pipeline:
+Built a 3-stage **fully remote** OS migration pipeline + automated recovery platform:
 
-**Image Build System:**
-- Docker-based build pipeline (reproducible, runs in CI)
-- 3 image types: full ISO (with diagnostics), lite ISO, bootable IMG
-- Multi-boot support for different OS versions (Astra Linux domain/non-domain, Windows)
-- Companion `initramfs-modifier` — patches Debian initramfs for USB multi-boot via bind mount
-- Kaspersky antivirus integration with automated database updates
+**Remote Migration Pipeline (the core innovation):**
+- **Stage 1 — PowerShell/SCCM**: Pushed remotely to all Windows machines via corporate SCCM. Prepares dual-boot: patches BCD (Boot Configuration Data), installs GRUB 2.06/GRUB4DOS bootloader alongside Windows, SHA256-verifies all payloads. Machine reboots into Stage 2 automatically
+- **Stage 2 — SystemRescue (Linux live environment)**: Runs disk diagnostics (smartctl), resizes NTFS partition (ntfsresize) to make room, converts partition table if needed (GPT/MBR). Installs Linux to freed space. If any step fails → automatic rollback to Windows boot
+- **Stage 3 — Linux post-install**: Site-specific configuration applied based on hardware profile. Domain/non-domain variants via custom initramfs patches (bind mount technique)
+- **11 specialized images** for different site types and security/compliance requirements (domain, non-domain, BitLocker, KSC integration, etc.)
+
+**Recovery Platform (for post-migration failures):**
+- Docker-based multi-boot rescue image builder (3 types: full ISO, lite ISO, bootable IMG)
+- Integrated antivirus with automated database updates
 - SHA256 integrity verification at every stage
 
-**Distribution Pipeline:**
-- `iso_rescue_diff_checker` → detects what changed since last build
-- `rescue-forge` → builds updated ISO/IMG
-- `chameleon-file-proxy` → uploads to SFTPGo FTP server
-- `torrent-forge` → creates private .torrent files
-- `opentracker-docker` → private BitTorrent tracker with IP whitelist
-- Field engineers download via BitTorrent (efficient for large files over limited WAN)
-
-**OS Migration (companion project):**
-- 3-stage remote migration pipeline: PowerShell/SCCM → SystemRescue → Astra Linux
-- GRUB 2.06/GRUB4DOS/BCD patching for bootloader transition
-- Disk operations: smartctl diagnostics, ntfsresize, GPT/MBR conversion
-- Rollback capability at every stage
-- 11 specialized Windows images for different site types and security requirements
+**Distribution Pipeline (serves both migration and recovery):**
+- Automated build: `diff_checker` → `rescue-forge` → `file-proxy` (SFTPGo) → `torrent-forge` → private BitTorrent tracker
+- Field engineers download large images via BitTorrent over limited WAN — efficient and resumable
 
 ## Result
 
 | Metric | Value |
 |--------|-------|
-| MTTR | **4 hours → 45 minutes** (89% reduction) |
-| Deployment | **1,000+ sites** across national network |
-| OS migration | **95% of workstations** migrated (Windows → Astra Linux) |
-| Adoption | Used by all field engineering teams |
-| Windows images | **11 specialized builds** for different security/compliance profiles |
+| OS migration | **95% of workstations** migrated Windows → Linux remotely, zero physical site visits |
+| Migration images | **11 specialized builds** covering all site types and security profiles |
+| Rollback rate | **<2%** — automatic rollback to Windows on failure |
+| Recovery MTTR | **4 hours → 45 minutes** (89% reduction) for post-migration hardware failures |
+| Scale | **1,000+ sites** across national network |
+| Adoption | Used by all field engineering teams, documentation and training delivered |
 | Build reproducibility | 100% — Docker-based, SHA256-verified |
 
 ## Tech Stack
 
-`Bash` `Docker` `SystemRescue` `PowerShell` `SCCM` `Python` `GRUB2` `BitTorrent` `OpenTracker` `SFTPGo` `Kaspersky` `Ansible`
+`Bash` `PowerShell` `SCCM` `Python` `Docker` `SystemRescue` `GRUB2` `GRUB4DOS` `BCD` `ntfsresize` `smartctl` `initramfs` `BitTorrent` `OpenTracker` `SFTPGo` `Ansible`

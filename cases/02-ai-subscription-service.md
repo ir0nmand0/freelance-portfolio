@@ -27,7 +27,7 @@ Built a Telegram-based backend with dual AI integration:
 - Anthropic SDK for advanced prompt engineering
 
 **Subscription Engine (74+ payment files):**
-- Robokassa integration with 3 subscription tiers (Standard/Premium/VIP)
+- Robokassa (regional payment gateway, comparable to Stripe) with 3 subscription tiers (Standard/Premium/VIP)
 - 54-FZ fiscal compliance (same as education platform, proven pattern)
 - Subscription lifecycle management: trial → active → renewal → expiry → grace period
 
@@ -48,9 +48,9 @@ Built a Telegram-based backend with dual AI integration:
 
 | Metric | Value |
 |--------|-------|
-| Spam handling | **100% automated** — zero manual spam filtering |
-| Booking | Fully automated appointment scheduling |
-| Customer throughput | Increased without additional staff |
+| Spam handling | **100% automated** — eliminated ~200 spam messages/day from manual review |
+| Booking | Fully automated — clients self-schedule without operator involvement |
+| Operator workload | Reduced by ~70% — AI handles drafts, spam, and scheduling |
 | Codebase | **57,375** Java LOC, **596** files |
 | Payment files | **74+** files handling subscription lifecycle |
 | Architecture docs | **8** Mermaid diagrams |

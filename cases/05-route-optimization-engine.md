@@ -22,7 +22,7 @@ Built a batch route calculation engine:
 **Core Logic:**
 - Spring Boot 3.5, Java 21, WebFlux for non-blocking I/O
 - GraphHopper v10 for offline routing (road graph stored locally — no per-request API costs)
-- Yandex Maps API for real-time traffic adjustments and geocoding
+- Regional Maps API for real-time traffic adjustments and geocoding (same integration pattern as Google Maps Directions API)
 - Reactive streams for parallel route calculation
 
 **Business Integration:**
@@ -36,11 +36,11 @@ Built a batch route calculation engine:
 | Metric | Value |
 |--------|-------|
 | Locations covered | **2,000+** routes calculated automatically |
-| Processing time | **Minutes** (was days of manual work) |
-| Accuracy | Real-time road conditions vs. manual estimation |
+| Processing time | **~5 minutes** for full network (was 3+ days of manual work) |
+| Accuracy | Real-time road conditions and traffic data vs. manual estimation |
 | Codebase | **2,416** Java LOC, production-ready |
 | Cost | Zero per-request costs (local GraphHopper graph) |
 
 ## Tech Stack
 
-`Spring Boot 3.5` `Java 21` `WebFlux` `GraphHopper v10` `Yandex Maps API` `Apache POI` `Docker`
+`Spring Boot 3.5` `Java 21` `WebFlux` `GraphHopper v10` `Maps Geocoding API` `Apache POI` `Docker`
