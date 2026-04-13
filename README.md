@@ -83,22 +83,14 @@ Network equipment configuration and support.
 
 ---
 
-## Portfolio Structure
+## About This GitHub Profile
 
-```
-├── README.md          ← You are here
-├── cases/             ← Project case studies (Problem → Solution → Result)
-│   ├── 01-online-education-platform.md
-│   ├── 02-ai-subscription-service.md
-│   ├── 03-field-service-management.md
-│   ├── 04-grpc-infrastructure-service.md
-│   ├── 05-route-optimization-engine.md
-│   ├── 06-gitops-kubernetes-infrastructure.md
-│   ├── 07-enterprise-recovery-platform.md
-│   └── 08-server-fleet-monitoring.md
-└── demo/              ← Live code & public repositories
-    └── README.md
-```
+All 5 commercial production systems (148K+ Java LOC) are in **private repositories** under NDA. The public repos pinned on this profile are educational projects that demonstrate the same technology stack I use in production: Spring Boot, microservices, Kafka, gRPC, Spring Security.
+
+**To see real production work:**
+- **[cases/](cases/)** — 8 detailed case studies with architecture decisions, metrics, and results
+- **[demo/](demo/)** — live URLs of running production systems + links to public code
+- **Live systems you can visit right now:** [learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/) | [arcanespectrum.ru](https://arcanespectrum.ru/)
 
 ---
 
