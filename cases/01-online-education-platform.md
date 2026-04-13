@@ -4,7 +4,6 @@
 **Role:** Backend developer, full cycle (requirements gathering with client → architecture → development → deployment)
 **Duration:** 6 months
 **Status:** Production (2 live instances serving paying customers)
-**Live:** [learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | [learn.domhair.ru](https://learn.domhair.ru/)
 
 ---
 

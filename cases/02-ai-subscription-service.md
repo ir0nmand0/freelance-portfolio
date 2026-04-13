@@ -4,7 +4,6 @@
 **Role:** Backend developer, full cycle
 **Duration:** 10 months
 **Status:** Production
-**Live:** [arcanespectrum.ru](https://arcanespectrum.ru/)
 
 ---
 

@@ -13,6 +13,8 @@ Public repositories and live deployments that demonstrate my engineering skills.
 | B2C Service | [arcanespectrum.ru](https://arcanespectrum.ru/) | Landing page for AI-powered subscription platform with Telegram bot backend |
 
 > All three services run on my GitOps infrastructure: GitHub Actions → Harbor → ArgoCD → K3s cluster
+>
+> **Note:** Client-facing content is in Russian. The backend architecture, payment integration, and deployment infrastructure are language-independent.
 
 ---
 
