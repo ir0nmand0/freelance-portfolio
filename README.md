@@ -4,7 +4,7 @@
 
 I build backend systems that handle payments without failing, monitor 2,000+ servers before they crash, and deploy to Kubernetes with zero manual steps.
 
-8 production systems shipped — [see case studies](cases/) and [live deployments](demo/).
+8 production systems shipped, 4 Kubernetes clusters running — [see case studies](cases/) and [live deployments](demo/).
 
 **Available for:** Contract & freelance work (remote, full-time capacity)
 **Timezone:** UTC+3 | Flexible overlap with US/EU hours | Response within 4 hours during business days
