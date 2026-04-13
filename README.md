@@ -6,8 +6,9 @@ I build backend systems that handle payments without failing, monitor 2,000+ ser
 
 8 production systems shipped — [see case studies](cases/) and [live deployments](demo/).
 
-**Available for:** Contract & freelance work (remote)
+**Available for:** Contract & freelance work (remote, full-time capacity)
 **Timezone:** UTC+3 | Flexible overlap with US/EU hours | Response within 4 hours during business days
+**Communication:** Text-based (Slack, Telegram, email) | English: professional working proficiency | Daily async updates
 
 ---
 
