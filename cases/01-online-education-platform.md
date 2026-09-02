@@ -3,7 +3,7 @@
 **Client:** NDA client (freelance)
 **Role:** Backend developer, full cycle (requirements gathering with client → architecture → development → deployment)
 **Duration:** 6 months
-**Status:** Production (2 live instances serving paying customers)
+**Status:** Production (3 live instances serving paying customers)
 
 ---
 
@@ -41,9 +41,9 @@ Built a Telegram-based learning platform from scratch on Spring Boot 4 / Java 25
 
 | Metric | Value |
 |--------|-------|
-| Production instances | **2** (learn.arcanespectrum.ru, learn.domhair.ru) |
+| Production instances | **3** (learn.arcanespectrum.ru, learn.domhair.ru, neurovektor.ru) |
 | Sales impact | **10x increase** — course prices dropped from $500–600 to $80–130 |
-| Codebase | **58,604** Java LOC, **657** files, **104** test files (39K test LOC) |
+| Codebase | **86,642** Java LOC, **741** files, **259** test files (81K test LOC), 22 Flyway migrations |
 | Payment uptime | **Zero processing failures** since launch (Circuit Breaker + retry) |
 | Deployment | Zero-touch via ArgoCD GitOps |
 
@@ -68,6 +68,8 @@ graph TB
         ARGO --> K8S[Kubernetes]
     end
 ```
+
+> The web portal and progress-map frontend built on this same core are covered separately in [case 09](09-learning-portal-and-progress-map.md).
 
 ## Tech Stack
 

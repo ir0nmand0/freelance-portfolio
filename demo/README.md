@@ -11,8 +11,9 @@ Public repositories and live deployments that demonstrate my engineering skills.
 | Education Platform #1 | [learn.arcanespectrum.ru](https://learn.arcanespectrum.ru/) | Online courses with Telegram bot, triple payment integration, PDF certificates |
 | Education Platform #2 | [learn.domhair.ru](https://learn.domhair.ru/) | Second instance — same backend, different client and course content |
 | B2C Service | [arcanespectrum.ru](https://arcanespectrum.ru/) | Landing page for AI-powered subscription platform with Telegram bot backend |
+| Learning Portal | [neurovektor.ru](https://neurovektor.ru/) | Web portal on the same backend — 37 courses, interactive prerequisite map, tests with worked solutions, QR certificate verification |
 
-> All three services run on my GitOps infrastructure: GitHub Actions → Harbor → ArgoCD → K3s cluster
+> All four services run on my GitOps infrastructure: GitHub Actions → Harbor → ArgoCD → K3s cluster
 >
 > **Note:** Client-facing content is in Russian. The backend architecture, payment integration, and deployment infrastructure are language-independent.
 

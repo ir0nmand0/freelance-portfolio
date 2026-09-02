@@ -4,7 +4,7 @@
 
 I build backend systems that handle payments without failing, monitor 2,000+ servers before they crash, and deploy to Kubernetes with zero manual steps.
 
-8 production systems shipped, 4 Kubernetes clusters running — [see case studies](cases/) and [live deployments](demo/).
+9 production systems shipped, 4 Kubernetes clusters running — [see case studies](cases/) and [live deployments](demo/).
 
 **Available for:** Contract & freelance work (remote, full-time capacity)
 **Timezone:** UTC+5 (Almaty) | Flexible overlap with US/EU hours | Response within 4 hours during business days
@@ -20,12 +20,15 @@ I build backend systems that handle payments without failing, monitor 2,000+ ser
 | **4h → 45 min recovery** | Automated recovery + remote OS migration across 1,000+ sites without physical access. 95% of fleet migrated |
 | **2,000+ servers monitored** | Built a predictive analytics platform from scratch — 6 failure prediction types, 32 alert categories, 2M metrics/day |
 | **Zero-touch deployments** | GitOps infrastructure: 18 ArgoCD apps, 3 K8s clusters, automated backups, vulnerability scanning, Telegram alerts |
+| **New web product, zero regressions** | Grew a Telegram-only platform into a full web portal on the same codebase — 37 courses live, both existing instances untouched (feature flags off by default) |
 
 ---
 
 ## Tech Stack
 
 **Core:** Java 21/25, Spring Boot 3.x/4.x, Virtual Threads, PostgreSQL, Redis, Flyway
+
+**Frontend:** React 19, TypeScript, Vite, TanStack Query, React Router, Zod, OpenAPI-generated clients, Vitest
 
 **Integration:** gRPC/Protobuf, Kafka, Spring AI (Claude + OpenAI), Payment gateways, Telegram Bot API, AWS S3/MinIO, Resilience4j
 
@@ -43,9 +46,10 @@ I build backend systems that handle payments without failing, monitor 2,000+ ser
 
 End-to-end delivery: requirements gathering → architecture → development → Kubernetes deployment. Working directly with clients, iterating based on feedback.
 
-- **[Online education platform](cases/01-online-education-platform.md)** — Triple payment integration (2 payment gateways + Telegram Payments), fiscal compliance, PDF certificates. 2 live instances, 10x client sales growth
+- **[Online education platform](cases/01-online-education-platform.md)** — Triple payment integration (2 payment gateways + Telegram Payments), fiscal compliance, PDF certificates. 3 live instances, 10x client sales growth
 - **[AI-powered subscription service](cases/02-ai-subscription-service.md)** — Dual LLM (Claude + OpenAI) with automatic failover, spam filtering, appointment booking. 25 background services, state machine workflows
 - **[gRPC infrastructure service](cases/04-grpc-infrastructure-service.md)** — Protobuf v4, QR-code delivery, self-service setup. IT support tickets dropped to near zero
+- **[Web learning portal & progress-map Mini App](cases/09-learning-portal-and-progress-map.md)** — Portal REST layer on the existing core plus a React 19 frontend generated from the backend's OpenAPI spec. Interactive prerequisite map, server-side content gating, shipped behind feature flags. Live: [neurovektor.ru](https://neurovektor.ru/)
 - **[GitOps infrastructure](cases/06-gitops-kubernetes-infrastructure.md)** — 3 K8s clusters, ArgoCD, Harbor, Prometheus/Grafana/Loki, encrypted backups
 
 ### Fortune 500 Energy Company — Nov 2019–Present (6.5 years)
@@ -74,7 +78,7 @@ Promoted Specialist → Senior Specialist. Java backend development since 2022, 
 Production repositories are private (NDA). The pinned repos are educational projects showing the same stack I use commercially: Spring Boot, Kafka, gRPC, Spring Cloud, Spring Security.
 
 **To evaluate my production work:**
-1. **[Case studies](cases/)** — 8 projects, each with Problem → Solution → Result and concrete metrics
+1. **[Case studies](cases/)** — 9 projects, each with Problem → Solution → Result and concrete metrics
 2. **[Live systems](demo/)** — click and see running production code
 3. **Architecture diagrams** — included in select case studies
 
